@@ -1,5 +1,5 @@
-const {getElementRangeByOtherElement,genericRequestGetWithPromise} = require('./generic-ml.js');
-const {apiUrl,defaultSite,defaultLimit,defaultOffset} = require('./settings.json');
+const {getElementRangeByOtherElement,genericRequestGetWithPromise} = require('../utilities/generic-ml.js');
+const {apiUrl,defaultSite,defaultLimit,defaultOffset} = require('../config/settings.json');
 let categoryJson={},j=0,resultAcu=[];
 //get categories with siteCode, example MLA,
 module.exports.getCategoriesML = (siteId=defaultSite) =>{

@@ -1,6 +1,6 @@
 const {getCategoriesML,getSubCategiruesML,getAllCategoryML} = require('./category-ml.js');
-const {getElementRangeByOtherElement,genericRequestGetWithPromise} = require('./generic-ml.js');
-const {apiUrl,defaultSite,defaultLimit,defaultOffset,errorCantItem} = require('./settings.json');
+const {getElementRangeByOtherElement,genericRequestGetWithPromise} = require('../utilities/generic-ml.js');
+const {apiUrl,defaultSite,defaultLimit,defaultOffset,errorCantItem} = require('../config/settings.json');
 const {getSites} = require('./site-ml.js');
 
 

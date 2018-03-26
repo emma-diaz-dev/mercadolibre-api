@@ -1,5 +1,5 @@
 let request = require('request');
-const {apiUrl,defaultSite,defaultLimit,defaultOffset} = require('./settings.json');
+const {apiUrl,defaultSite,defaultLimit,defaultOffset} = require('../config/settings.json');
 //seller_id
 module.exports.getElementRangeByOtherElement = (searchTag,id,offset=defaultOffset,limit=defaultLimit,siteCode=defaultSite,orderBy='') => {
   return new Promise((resolve,reject) => {

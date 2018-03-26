@@ -1,7 +1,7 @@
-let basicsml = require('./basicsrequestml.js');
+let basicsml = require('./utilities/basicsrequestml.js');
 let querystring = require('querystring');
 const {jsonToPrettyTable,jsonFileToPrettyTable} = require('showtables');
-let {BasicDB} = require('../basicDB.js');
+let {BasicDB} = require('./database/basicDB.js');
 
 let request = require('request');
 let args = process.argv.slice(2).join(' ');
@@ -30,12 +30,12 @@ let ProductML,{
   getProductCantForCategoryBySite,
   getCategoryWithMaxCantProductBySite,
   getCategoryWithMaxCantProduct
-} = require('./product-ml.js');
-const {getAllSellersByCategory,getProductByNickname} = require('./seller-ml.js');
+} = require('./model/product-ml.js');
+const {getAllSellersByCategory,getProductByNickname} = require('./model/seller-ml.js');
 
-let CategoryML,{getCategoriesML,getSubCategiruesML,getAllCategoryML} = require('./category-ml.js');
-const {getSites,getDomains} = require('./site-ml.js');
-const {getTrends,getTrendsByCategory,getTrendAllCategories} = require('./trend-ml.js');
+let CategoryML,{getCategoriesML,getSubCategiruesML,getAllCategoryML} = require('./model/category-ml.js');
+const {getSites,getDomains} = require('./model/site-ml.js');
+const {getTrends,getTrendsByCategory,getTrendAllCategories} = require('./model/trend-ml.js');
 
 
 // getTrends(10).then( result => {

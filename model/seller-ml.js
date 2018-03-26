@@ -1,6 +1,6 @@
-const {apiUrl,defaultSite,defaultLimit,defaultOffset} = require('./settings.json');
+const {apiUrl,defaultSite,defaultLimit,defaultOffset} = require('../config/settings.json');
 const {getProductRangeByCategory} = require('./product-ml.js');
-const {getElementRangeByOtherElement,getElementProfileById,genericRequestGetWithPromise} = require('./generic-ml.js');
+const {getElementRangeByOtherElement,getElementProfileById,genericRequestGetWithPromise} = require('../utilities/generic-ml.js');
 
 module.exports.getUserIdByNickname = (nickname,siteId=defaultSite) => {
   return new Promise((resolve,reject) => {
