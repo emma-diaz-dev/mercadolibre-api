@@ -1,0 +1,7 @@
+{
+  "apiUrl":"https://api.mercadolibre.com/",
+  "defaultSite":"MLA",
+  "defaultLimit":"200",
+  "defaultOffset":"0",
+  "errorCantItem":[10002,50002,15002,500002]
+}
