@@ -13,5 +13,11 @@ Local (in project)
 
 const allEntities,{category,product,trend,seller,site} = require('mercadolibre-api');
 ```
+Result
+<div style="text-align:center">
+
+![Start App](https://imgur.com/a/BzAQo)
+
+</div>
 
 Version Beta 0.2.0
