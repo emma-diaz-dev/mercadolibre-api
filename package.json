@@ -1,6 +1,6 @@
 {
   "name": "mercadolibre-api",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "The Application for show json in cmd table",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "url": "https://github.com/audio35444/mercadolibre-api"
   },
   "preferGlobal": "true",
-  "author": "Juan Emmanuel Díaz, Developer Ssr. Node.js",
+  "author": "Juan Emmanuel Díaz Developer Ssr. Node.js",
   "keywords": ["mercadolibre-sdk","mercadolibre-api","mercadolibre","node.js","javascript"],
   "license": "ISC",
   "dependencies": {

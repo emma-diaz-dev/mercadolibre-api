@@ -70,7 +70,6 @@ module.exports.showMenu = (argv,actions) => {
               tempAction.allCategory(tempValue[1].toUpperCase());
             }
           }else if(tempValue[0].length <= 3 && 'sub' === tempValue[0].toLowerCase()){
-            console.log('entro en sub');
             if(tempValue[1] && tempValue[1].length>0){
               tempAction.subCategory(tempValue[1].toUpperCase());
             }
