@@ -29,8 +29,28 @@ if (require.main === module) {
   argv = argv.join(' ');
   const actions = {
     "ca":{
-      "empty":() => this.category.getCategoriesML().then( result => jsonToPrettyTable(result)),
-      "siteId":(siteId) => this.category.getCategoriesML(siteId).then( result => jsonToPrettyTable(result))
+      "empty":() => this.category.getCategoriesBySite().then( result => jsonToPrettyTable(result)),
+      "siteId":siteId => this.category.getCategoriesBySite(siteId).then( result =>{
+        if(result.error){
+          this.category.getCategoriesBySiteName(siteId).then(result =>{
+            if(result.error)return jsonToPrettyTable([result])
+            jsonToPrettyTable(result)
+          });
+        }else jsonToPrettyTable(result);
+      }),
+      "siteName":siteName => this.category.getCategoriesBySiteName(siteName).then(result => jsonToPrettyTable(result)),
+      "subCategory": categoryId => this.category.getSubCategiruesML(categoryId).then(result => {
+        if(result.error)return jsonToPrettyTable([result])
+        // console.log(result);
+        jsonToPrettyTable(result.children_categories)
+      }),
+      "allCategory": categoryId => this.category.getAllCategoryML(categoryId).then(result => {
+        if(result.error)return jsonToPrettyTable([result])
+        // console.log(result);
+        let acu = [];
+        result.map( element => acu.push({"id":element.id,"name":element.name,"total_items_in_this_category":element.total_items_in_this_category}));
+        jsonToPrettyTable(acu)
+      })
     }
   }
   showMenu(argv,actions);
@@ -38,6 +58,6 @@ if (require.main === module) {
   // console.log(argv);
   argv =[ "MLA"]
   // if(argv[0]==="site") this.site.getSites().then( result => jsonToPrettyTable(result));
-  // else if(argv[0].length === 3 && argv[0].indexOf('M')!=-1) this.category.getCategoriesML(argv[0]).then(result => jsonToPrettyTable(result));
+  // else if(argv[0].length === 3 && argv[0].indexOf('M')!=-1) this.category.getCategoriesBySite(argv[0]).then(result => jsonToPrettyTable(result));
   // else if(argv[0] === "trend") this.trend.getTrendsBySite(argv[1]?argv[1]:"MLA").then(result => jsonToPrettyTable(result));
 }

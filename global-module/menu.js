@@ -57,14 +57,26 @@ module.exports.showMenu = (argv,actions) => {
     else if(options.indexOf(argv[i][0].toLowerCase())!== -1){
       tempOpt = argv[i][0];
       tempValue = argv[i].splice(1);
+      // console.log(tempOpt);
+      // console.log(tempValue);
       switch (tempOpt) {
         case "ca":
           tempAction = actions["ca"];
           //-ca [siteId]
           if(tempValue.length <= 0){
             tempAction.empty();
-          }else if(['all','sub'].indexOf(tempValue[0].toLowerCase()) === -1 ){
-            tempAction.siteId(tempValue[0].toUpperCase());
+          }else if(tempValue[0].length <= 3 && 'all' === tempValue[0].toLowerCase()){
+            if(tempValue[1] && tempValue[1].length>0){
+              tempAction.allCategory(tempValue[1].toUpperCase());
+            }
+          }else if(tempValue[0].length <= 3 && 'sub' === tempValue[0].toLowerCase()){
+            console.log('entro en sub');
+            if(tempValue[1] && tempValue[1].length>0){
+              tempAction.subCategory(tempValue[1].toUpperCase());
+            }
+          }else{
+            if(tempValue[0].length === 3)tempAction.siteId(tempValue[0].toUpperCase());
+            else tempAction.siteName(tempValue[0]);
           }
           break;
         case "pr":

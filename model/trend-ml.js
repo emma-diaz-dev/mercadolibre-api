@@ -1,7 +1,7 @@
 const {apiUrl,defaultSite,defaultLimit,defaultOffset} = require('../config/settings.json');
 const {getElementRangeByOtherElement,getElementProfileById,genericRequestGetWithPromise} = require('../utilities/generic-ml.js');
 const {getSites} = require('./site-ml.js');
-const {getCategoriesML} = require('./category-ml.js');
+const {getCategoriesBySite} = require('./category-ml.js');
 
 
 
@@ -40,7 +40,7 @@ module.exports.getTrendsByCategory = (categoryId,siteId=defaultSite,limit=defaul
 module.exports.getTrendAllCategories = (siteId=defaultSite,limit=defaultLimit) =>{
   return new Promise((resolve,reject) => {
     let acuPromises = [],i=0,range=0;
-    getCategoriesML().then( categories => {
+    getCategoriesBySite().then( categories => {
       range = categories.length;
       for(;i<range;i++){
         acuPromises.push(this.getTrendsByCategory(categories[i].id,siteId,limit));}

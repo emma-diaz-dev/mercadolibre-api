@@ -1,4 +1,4 @@
-const {getCategoriesML,getSubCategiruesML,getAllCategoryML} = require('./category-ml.js');
+const {getCategoriesBySite,getSubCategiruesML,getAllCategoryML} = require('./category-ml.js');
 const {getElementRangeByOtherElement,genericRequestGetWithPromise} = require('../utilities/generic-ml.js');
 const {apiUrl,defaultSite,defaultLimit,defaultOffset,errorCantItem} = require('../config/settings.json');
 const {getSites} = require('./site-ml.js');
@@ -24,7 +24,7 @@ module.exports.getCantProductByCategory = (categoryId,siteId=defaultSite) => {
 module.exports.getCantProductByCategories = (siteId=defaultSite) => {
   return new Promise((resolve,reject) =>{
     let promiseAcu=[],i=0,range=0,acuResult=[];
-    getCategoriesML(siteId).then(categories => {
+    getCategoriesBySite(siteId).then(categories => {
       categories.map( category => {
         promiseAcu.push(this.getCantProductByCategory(category.id,siteId));
       });
@@ -77,7 +77,7 @@ module.exports.getCategoryWithMaxCantProduct = () => {
 module.exports.getCantProductsBySite = (siteId=defaultSite) => {
  return new Promise((resolve,reject) => {
    let acuPromiseCategories = [],productCant=0;
-   getCategoriesML(siteId).then( categories => {
+   getCategoriesBySite(siteId).then( categories => {
      if(!categories || categories.length <1) reject('Categories not found!')
      categories.map( category => {
        acuPromiseCategories.push(getSubCategiruesML(category.id));
@@ -112,7 +112,7 @@ module.exports.getProductVariationsById = (productId) => {
 module.exports.getCantProductsBySiteSubCategories = (siteId=defaultSite) => {
   return new Promise((resolve,reject) => {
     let acuPromiseCategories = [],productCant=0;
-    getCategoriesML(siteId).then( categories => {
+    getCategoriesBySite(siteId).then( categories => {
       console.log('llego a las categorias');
       console.log(categories);
       if(!categories || categories.length <1) reject('Categories not found!')
@@ -179,7 +179,7 @@ const sortElement = (elementList,attributeOrder=null) => {
 module.exports.getProductCantForCategoryBySite = (siteId=defaultSite) => {
   return new Promise((resolve,reject) => {
       let acuPromiseCategories = [],resultAcu=[],i=0;
-    getCategoriesML(siteId).then( categories => {
+    getCategoriesBySite(siteId).then( categories => {
       if(!categories || categories.length <1) reject('Categories not found!')
       categories.map( category => {
         acuPromiseCategories.push(this.getProductRangeByCategory(category.id,0,1,siteId));
@@ -224,7 +224,7 @@ module.exports.getAllSellersByCategory = (categoryId,siteId=defaultSite) => {
 module.exports.getAllSellersBySite = (siteId=defaultSite) => {
   return new Promise((resolve,reject) => {
     let acuPromiseCategories = [],resultAcu=[];
-    getCategoriesML(siteId).then( categories => {
+    getCategoriesBySite(siteId).then( categories => {
       categories.map( category => {
         acuPromiseCategories.push(this.getAllSellersByCategory(category.id,siteId));
       });
@@ -252,7 +252,7 @@ let sequentialSellers = (categories,siteId,acuResult=[]) => {
 module.exports.getAllSellersBySiteSequential = (siteId=defaultSite) => {
   return new Promise((resolve,reject) => {
     let acuPromiseCategories = [],resultAcu=[];
-    getCategoriesML(siteId).then( categories => {
+    getCategoriesBySite(siteId).then( categories => {
       sequentialSellers(categories,siteId).then( result => {
         console.log('finish sellers search');
         resolve(result);
