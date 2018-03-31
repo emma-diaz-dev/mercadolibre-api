@@ -46,9 +46,16 @@ module.exports.getAllSellersByCategory = (categoryId,siteId=defaultSite) => {
   });
 };
 
-module.exports.getSellerProfileById = (id) => {
+module.exports.getSellerProfileBySeller = (sellerId) => {
   return new Promise((resolve,reject) => {
-    getElementProfileById('users',id).then( result => resolve(result));
+    getElementProfileById('users',sellerId).then( result => resolve(result));
+  });
+};
+module.exports.getSellerProfileByNickname = (nickname,siteId=defaultSite) => {
+  return new Promise((resolve,reject) => {
+    this.getUserIdByNickname(nickname,siteId).then( profile =>{
+      getElementProfileById('users',profile.seller.id).then( result => resolve(result));
+    });
   });
 };
 module.exports.getCantProductsBySeller = () => {

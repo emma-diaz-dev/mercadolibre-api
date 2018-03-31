@@ -1,0 +1,55 @@
+{
+  "english":{
+    "help":[
+      {"option":"Help","params":"[-help|-h]","example":"> meliapi -help OR meliapi -h OR meliapi","help":"-----------------------------------------"},
+      {"option":"Category","params":"-ca [siteId]","example":"> meliapi -ca MLA","help":"meliapi -help ca OR meliapi -h ca OR meliapi -ca help"},
+      {"option":"Product","params":"-pr [categoryId]","example":"> meliapi -pr MLA1403","help":"meliapi -help pr OR meliapi -h pr OR meliapi -pr help"},
+      {"option":"Site","params":"-si [siteId]","example":"> meliapi -si MLA","help":"meliapi -help si OR meliapi -h si OR meliapi -si help"},
+      {"option":"Seller","params":"-se [sellerId]","example":"> meliapi -se 35198814","help":"meliapi -help se OR meliapi -h se OR meliapi -se help"},
+      {"option":"Trend","params":"-tr [trendLimit]","example":"> meliapi -tr 10","help":"meliapi -help tr OR meliapi -h tr OR meliapi -tr help"}
+    ],
+    "category":[
+      {"option":"Category","params":"-ca","example":"meliapi -ca help","explanation":""},
+      {"option":"Category","params":"-ca [siteId]","example":"meliapi -ca MLA","explanation":""},
+      {"option":"Category","params":"-ca [siteName]","example":"meliapi -ca Argentina","explanation":""},
+      {"option":"Category","params":"-ca all (categoryId)","example":"meliapi -ca all MLA5725","explanation":""},
+      {"option":"Category","params":"-ca all (categoryName)","example":"meliapi -ca all 'Alimentos y Bebidas'","explanation":""},
+      {"option":"Category","params":"-ca sub (categoryId)","example":"meliapi -ca sub MLA5725","explanation":""},
+      {"option":"Category","params":"-ca sub (categoryName)","example":"meliapi -ca sub 'Alimentos y Bebidas'","explanation":""}
+    ],
+    "product":[
+      {"option":"Product","params":"-pr","example":"meliapi -pr help","explanation":""},
+      {"option":"Product","params":"-pr [categoryId]","example":"meliapi -pr MLA1403","explanation":""},
+      {"option":"Product","params":"-pr [categoryName]","example":"meliapi -pr 'Alimentos y Bebidas'","explanation":""},
+      {"option":"Product","params":"-pr cantXcaXsi [siteId]","example":"meliapi -pr cantXcaXsi MLA","explanation":""},
+      {"option":"Product","params":"-pr cantXcaXsi [siteName]","example":"meliapi -pr cantXcaXsi Argentina","explanation":""},
+      {"option":"Product","params":"-pr cantXsi","example":"meliapi -pr cantXsi","explanation":""}
+    ],
+    "seller":[
+      {"option":"Seller","params":"-se [sellerName]","example":"meliapi -se TETE6838590","explanation":""},
+      {"option":"Seller","params":"-se prXse [sellerId]","example":"meliapi -se prXse 35198814","explanation":""},
+      {"option":"Seller","params":"-se prXse [sellerName]","example":"meliapi -se prXse TETE6838590","explanation":""},
+      {"option":"Seller","params":"-se profXse [sellerId]","example":"meliapi -se profXse 35198814","explanation":""},
+      {"option":"Seller","params":"-se profXse [sellerName]","example":"meliapi -se profXse TETE6838590","explanation":""}
+    ],
+    "site":[
+      {"option":"Site","params":"-si","example":"meliapi -si","explanation":""},
+      {"option":"Site","params":"-si dom","example":"meliapi -si dom","explanation":""},
+      {"option":"Site","params":"-si detail","example":"meliapi -si detail","explanation":""}
+    ],
+    "trend":[
+      {"option":"Trend","params":"-tr [siteId]","example":"meliapi -tr MLA","explanation":""},
+      {"option":"Trend","params":"-tr all","example":"meliapi -tr all","explanation":""},
+      {"option":"Trend","params":"-tr trXca (categoryId) [siteId]","example":"meliapi -tr trXca MLA1403 MLA","explanation":""}
+    ]
+  },
+  "spanish":{
+    "help":[
+      {"opcion":"Categoria","parametro":"-ca [IdDeCategoria|NombreDeCategoria]","ejemplo":"meliapi -ca MLA5725 o meliapi -ca 'Alimentos y Bebidas'"},
+      {"opcion":"Productos","parametro":"-pr [IdDeProducto]","ejemplo":"meliapi -pr"},
+      {"opcion":"Sitio","parametro":"-si [IdDeSitio|NombreDeSitio]","ejemplo":"meliapi -si"},
+      {"opcion":"Vendedor","parametro":"-se [IdDeVendedor|NombreDeVendedor]","ejemplo":"meliapi -se"},
+      {"opcion":"Tendencia","parametro":"-tr [CantidadDeTendencias]","ejemplo":" meliapi -tr 10"}
+    ]
+  }
+}

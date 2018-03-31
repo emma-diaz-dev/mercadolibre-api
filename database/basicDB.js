@@ -44,7 +44,7 @@ class BasicDB{
       consultaJson[this._keySchema] = keyValue;
       this.elementToNow.findOne(consultaJson,(err, element) => {
         if (err) {
-          reject('errorrrr',err);
+          reject('error',err);
         } else {
           resolve(element);
         }
@@ -58,7 +58,7 @@ class BasicDB{
       consultaJson[this._keySchema] = keyValue;
       this.elementToNow.find(consultaJson,(err, elements) => {
         if (err) {
-          reject('errorrrr',err);
+          reject('error',err);
         } else {
           resolve(elements);
         }
@@ -72,7 +72,7 @@ class BasicDB{
       consultaJson[fieldName] = fieldValue;
       this.elementToNow.find(consultaJson,(err, elements) => {
         if (err) {
-          reject('errorrrr',err);
+          reject('error',err);
         } else {
           resolve(elements);
         }
