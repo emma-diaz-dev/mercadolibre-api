@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const {jsonToPrettyTable,jsonFileToPrettyTable} = require('showtables');
 const {showMenu} = require('./global-module/menu.js');
 
