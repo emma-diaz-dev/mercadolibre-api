@@ -1,6 +1,6 @@
 {
   "name": "mercadolibre-api",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "The Application for show json in cmd table",
   "main": "index.js",
   "scripts": {

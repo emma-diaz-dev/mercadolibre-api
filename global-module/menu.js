@@ -74,7 +74,7 @@ module.exports.showMenu = (argv,actions) => {
               tempAction.subCategory(tempValue[1].toUpperCase());
             }
           }else{
-            if(tempValue[0].length === 3)tempAction.siteId(tempValue[0].toUpperCase());
+            if(tempValue[0].length === 3)tempAction.siteId(tempValue[0].toUpperCase(  ));
             else tempAction.siteName(tempValue[0]);
           }
           break;

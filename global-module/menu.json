@@ -13,9 +13,9 @@
       {"option":"Category","params":"-ca [siteId]","example":"meliapi -ca MLA","explanation":""},
       {"option":"Category","params":"-ca [siteName]","example":"meliapi -ca Argentina","explanation":""},
       {"option":"Category","params":"-ca all (categoryId)","example":"meliapi -ca all MLA5725","explanation":""},
-      {"option":"Category","params":"-ca all (categoryName)","example":"meliapi -ca all 'Alimentos y Bebidas'","explanation":""},
-      {"option":"Category","params":"-ca sub (categoryId)","example":"meliapi -ca sub MLA5725","explanation":""},
-      {"option":"Category","params":"-ca sub (categoryName)","example":"meliapi -ca sub 'Alimentos y Bebidas'","explanation":""}
+      {"option":"Category","params":"-ca all (categoryName) [siteId|siteName]","example":"meliapi -ca all 'Alimentos y Bebidas'","explanation":""},
+      {"option":"Category","params":"-ca sub (categoryId) [siteId|siteName]","example":"meliapi -ca sub MLA5725","explanation":""},
+      {"option":"Category","params":"-ca sub (categoryName) [siteId|siteName]","example":"meliapi -ca sub 'Alimentos y Bebidas'","explanation":""}
     ],
     "product":[
       {"option":"Product","params":"-pr","example":"meliapi -pr help","explanation":""},
