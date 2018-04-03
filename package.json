@@ -14,9 +14,9 @@
     "url": "https://github.com/audio35444/mercadolibre-api"
   },
   "preferGlobal": "true",
-  "author": "Juan Emmanuel Díaz Developer Ssr. Node.js",
+  "author": "Juan Emmanuel Díaz",
   "keywords": ["mercadolibre-sdk","mercadolibre-api","mercadolibre","node.js","javascript"],
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "async": "^2.6.0",
     "lodash": "^4.17.5",
